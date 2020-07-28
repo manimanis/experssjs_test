@@ -4,6 +4,11 @@ let app = express();
 
 let personRoute = require('./routes/person');
 
+app.use((req, res, next) => {
+    console.log(`${new Date().toString()}`);
+    next();
+});
+
 app.use(personRoute);
 app.use(express.static('public'));
 
