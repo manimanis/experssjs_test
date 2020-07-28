@@ -13,4 +13,8 @@ router.get('/person/:name', (req, res) => {
     res.send(`You have requested ${req.params.name} person!`);
 });
 
+
+router.get('/error', (req, res) => {
+    throw new Error('A new error!');
+});
 module.exports = router;
